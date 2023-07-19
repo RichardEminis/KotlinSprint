@@ -6,17 +6,12 @@ fun main() {
     val minutesInSpace: Int = (secondsInSpace/60) - (60*hoursInSpace)
     var seconds: Int = minutesInSpace*60 - (secondsInSpace - 3600*hoursInSpace)
     seconds = Math.abs(seconds)
-    val second: Int
 
-    if(seconds < 10) {
-        seconds.toString()
+    if((seconds < 10)&&(hoursInSpace < 10)) {
+        println("ГАГАРИН НАХОДИЛСЯ В КОСМОСЕ 0$hoursInSpace:$minutesInSpace:0$seconds")
+    } else if ((seconds < 10)&&(hoursInSpace >= 10)){
         println("ГАГАРИН НАХОДИЛСЯ В КОСМОСЕ $hoursInSpace:$minutesInSpace:0$seconds")
     } else {
-        second = seconds
-        println("ГАГАРИН НАХОДИЛСЯ В КОСМОСЕ $hoursInSpace:$minutesInSpace:$second")
+        println("ГАГАРИН НАХОДИЛСЯ В КОСМОСЕ $hoursInSpace:$minutesInSpace:$seconds")
     }
-
-
-
-
 }
