@@ -4,7 +4,7 @@ fun main() {
     val numberOfEmployees: Int = 50
     val numberOfInterns: Int = 30
     val employeeSalary: Int = 30000
-    val InternSalary: Int = 20000
+    val internSalary: Int = 20000
 
     val finalSalaryOfEmployees: Int = numberOfEmployees * employeeSalary
     val finalSalaryOfInterns: Int = numberOfInterns * InternSalary
