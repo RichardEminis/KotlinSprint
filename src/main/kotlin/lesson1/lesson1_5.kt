@@ -7,7 +7,7 @@ fun main() {
         secondsInSpace / 3600,
         secondsInSpace / 60 % 60,
         secondsInSpace % 60
-    );
+    )
 //крутая штука, я заценил :D
     print(time)
 }
