@@ -9,23 +9,23 @@ fun main() {
     val dayTime = LocalTime.parse("12:00")
     val eveningTime = LocalTime.parse("18:00")
 
-    val nightText: String = ", сладких снов :3"
-    val morningText: String = "Доброе утро,"
-    val dayText: String = "Добрый день,"
-    val eveningText: String = "Добрый вечер,"
+    val nightText: String = "сладких снов"
+    val morningText: String = "Доброе утро"
+    val dayText: String = "Добрый день"
+    val eveningText: String = "Добрый вечер"
 
     println("Введите свое имя")
     val name = readln()
     println()
 
     if ((currentTime.isAfter(nightTime)) && (currentTime.isBefore(morningTime))) {
-        println("$name $nightText")
+        println("$name, $nightText")
     } else if ((currentTime.isAfter(morningTime)) && (currentTime.isBefore(dayTime))) {
-        println("$morningText $name")
+        println("$morningText, $name")
     } else if ((currentTime.isAfter(dayTime)) && (currentTime.isBefore(eveningTime))) {
-        println("$dayText $name")
+        println("$dayText, $name")
     } else {
-        println("$eveningText $name")
+        println("$eveningText, $name")
     }
 }
 
