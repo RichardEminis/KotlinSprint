@@ -1,9 +1,9 @@
 package lesson4
 
+const val SUN_AVAILABILITY: Boolean = true
+const val TENT_STATUS: Boolean = true
+const val AIR_HUMIDITY: Int = 20
 fun main() {
-    val sunAvailability: Boolean = true
-    val tentStatus: Boolean = true
-    val airHumidity: Int = 20
     val season: String = "Зима"
     val statusOfSeason: Boolean = season != "Зима"
 
