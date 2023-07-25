@@ -12,4 +12,3 @@ fun main() {
 
     println("Начальный ход: $startPoint\nКонечный ход: $endPoint\nНомер хода: $moveNumber")
 }
-
