@@ -10,9 +10,9 @@ fun main() {
     println("Введите второе число:")
     val secondNumber: Int = readln().toInt()
 
-    if ((firstNumber == numberToWin) && (secondNumber == secondNumberToWin)) {
+    if (((firstNumber == numberToWin) || (secondNumber == numberToWin))&&((firstNumber == secondNumberToWin) || (secondNumber == secondNumberToWin))) {
         println("Поздравляем! Вы выиграли главный приз!")
-    } else if ((firstNumber == numberToWin) || (secondNumber == secondNumberToWin)) {
+    } else if (((firstNumber == numberToWin) || (secondNumber == numberToWin))||((firstNumber == secondNumberToWin) || (secondNumber == secondNumberToWin))) {
         println("Вы выиграли утешительный приз!")
     } else {
         println("Неудача! Крутите барабан!")
