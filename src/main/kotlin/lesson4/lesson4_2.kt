@@ -1,16 +1,18 @@
 package lesson4
 
+const val MIN_AVERAGE_WEIGHT: Int = 35
+const val MAX_AVERAGE_WEIGHT: Int = 100
+const val MAX_AVERAGE_VOLUME: Int = 100
 fun main() {
     var weight: Int = 20
     var volume: Int = 80
-    val minAverageWeight: Int = 35
-    val maxAverageWeight: Int = 100
-    val maxAverageVolume: Int = 100
+    var accordance: Boolean = ((MAX_AVERAGE_WEIGHT >= weight) && (weight >= MIN_AVERAGE_WEIGHT)) && (volume <= MAX_AVERAGE_VOLUME)
 
-    println("Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': ${((maxAverageWeight >= weight) && (weight >= minAverageWeight)) && (volume <= maxAverageVolume)}")
+    println("Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': $accordance")
 
     weight = 50
     volume = 100
+    accordance = ((MAX_AVERAGE_WEIGHT >= weight) && (weight >= MIN_AVERAGE_WEIGHT)) && (volume <= MAX_AVERAGE_VOLUME)
 
-    println("Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': ${((maxAverageWeight >= weight) && (weight >= minAverageWeight)) && (volume <= maxAverageVolume)}")
+    println("Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': $accordance")
 }
