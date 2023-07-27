@@ -6,13 +6,14 @@ const val MAX_AVERAGE_VOLUME: Int = 100
 fun main() {
     var weight: Int = 20
     var volume: Int = 80
-    var accordance: Boolean = ((MAX_AVERAGE_WEIGHT >= weight) && (weight >= MIN_AVERAGE_WEIGHT)) && (volume <= MAX_AVERAGE_VOLUME)
+    var accordance: Boolean =
+        ((MIN_AVERAGE_WEIGHT <= weight) && (MAX_AVERAGE_WEIGHT >= weight)) && (MAX_AVERAGE_VOLUME > volume)
 
     println("Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': $accordance")
 
     weight = 50
     volume = 100
-    accordance = ((MAX_AVERAGE_WEIGHT >= weight) && (weight >= MIN_AVERAGE_WEIGHT)) && (volume <= MAX_AVERAGE_VOLUME)
+    accordance = ((MIN_AVERAGE_WEIGHT <= weight) && (MAX_AVERAGE_WEIGHT >= weight)) && (MAX_AVERAGE_VOLUME > volume)
 
     println("Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': $accordance")
 }
