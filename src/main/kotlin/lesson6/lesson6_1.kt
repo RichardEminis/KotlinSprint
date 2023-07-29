@@ -19,7 +19,7 @@ fun main() {
         println(passwordText)
         val password: String = readln()
 
-        if ((logIn != userLogIn) && (password != userPassword)) {
+        if ((logIn != userLogIn) || (password != userPassword)) {
             val mistakeText = "Неверный логин или пароль, попробуйте авторизоваться заново."
             println(mistakeText)
             println()
@@ -27,5 +27,5 @@ fun main() {
             val rightLogInText = "Авторизация прошла успешно!"
             println(rightLogInText)
         }
-    } while ((userLogIn != logIn) && (userPassword != password))
+    } while ((userLogIn != logIn) || (userPassword != password))
 }
