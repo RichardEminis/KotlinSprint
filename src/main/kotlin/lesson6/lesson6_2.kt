@@ -7,8 +7,8 @@ fun main() {
     var seconds: Int = readln().toInt()
     val totalSeconds: Int = seconds
 
-    while (seconds != 0) {
-        println("осталось ${seconds--} секунд")
+    while (seconds > 0) {
+        seconds--
         Thread.sleep(1000)
     }
     print("Прошло $totalSeconds секунд")
