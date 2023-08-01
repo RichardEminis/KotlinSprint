@@ -12,11 +12,12 @@ fun main () {
 
         if ((firstRandomNumber + secondRandomNumber) == userAnswer){
             println("Добро пожаловать!")
+            return
         } else if (numberOfAttempt > 1){
-            println("Попробуйте еще раз.\nКоличество попыток осталось: ${--numberOfAttempt}")
-            println()
+            println("Попробуйте еще раз.\nКоличество попыток осталось: ${--numberOfAttempt}\n")
         } else {
             println("Количество попыток осталось: ${--numberOfAttempt}\nДоступ запрещен.")
+            return
         }
-    } while (((firstRandomNumber + secondRandomNumber) != userAnswer) && (numberOfAttempt != 0))
+    } while (((firstRandomNumber + secondRandomNumber) != userAnswer))
 }
