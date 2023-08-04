@@ -1,13 +1,15 @@
 package lesson7
 
 fun main() {
-    var charOne: IntRange = 0..9
-    var charTwo: CharRange = 'a'..'z'
-    var charThree: IntRange = 0..9
-    var charFour: CharRange = 'a'..'z'
-    var charFive: IntRange = 0..9
-    var charSix: CharRange = 'a'..'z'
+    val charOne: IntRange = 0..9
+    val charTwo: CharRange = 'a'..'z'
+    val charThree: IntRange = 0..9
+    val charFour: CharRange = 'a'..'z'
+    val charFive: IntRange = 0..9
+    val charSix: CharRange = 'a'..'z'
 
-    print("Ваш пароль: ${charOne.random()}${charTwo.random()}${charThree.random()}" +
-            "${charFour.random()}${charFive.random()}${charSix.random()}")
+    val password = charOne.random().toString() + charTwo.random().toString() + charThree.random().toString() +
+            charFour.random().toString() + charFive.random().toString() + charSix.random().toString()
+
+    println(password)
 }
