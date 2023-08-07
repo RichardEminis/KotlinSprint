@@ -6,7 +6,7 @@ fun main () {
     println("Введите искомый ингредиент:")
     val ingredient = readln()
 
-    if (arrayOfIngredients.contains(ingredient) == true){
+    if (arrayOfIngredients.contains(ingredient)){
         println("Ингредиент [$ingredient] в рецепте есть")
     } else {
         println("Такого ингредиента в рецепте нет")
