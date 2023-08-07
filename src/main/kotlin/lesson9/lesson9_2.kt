@@ -1,19 +1,18 @@
 package lesson9
 
 fun main() {
-    var listOfIngredients = mutableListOf("Картошка", "Вода", "Банан")
+    val listOfIngredients = mutableListOf("Картошка", "Вода", "Банан")
 
     println("В рецепте есть базовые ингредиенты:")
     listOfIngredients.forEach {
         println(it)
     }
 
-    println("Желаете добавить еще?")
-    var answer = readln()
+    println("\nЖелаете добавить еще?")
 
-    if (answer == "да"){
+    if (readln().equals("да", ignoreCase = true)) {
         println("Какой ингредиент вы хотите добавить?")
-        answer = readln()
+        val answer = readln()
         listOfIngredients.add(answer)
         println("Теперь в рецепте есть следующие ингредиенты:")
         listOfIngredients.forEach {
