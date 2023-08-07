@@ -2,13 +2,13 @@ package lesson7
 
 fun main() {
     println("Введите длину генерируемого пароля:")
-    var passwordLength: Int = readln().toInt()
+    val passwordLength: Int = readln().toInt()
 
-    var storageSybols = ("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890").random().toString()
+    var storageSymbols = (('a'..'z') + ('A'..'Z') + ('0'..'9')).random().toString()
 
     for (i in 1 until passwordLength) {
-        var passwordSymbols = ("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890").random().toString()
-        storageSybols += passwordSymbols
+        val passwordSymbols = (('a'..'z') + ('A'..'Z') + ('0'..'9')).random().toString()
+        storageSymbols += passwordSymbols
     }
-    println(storageSybols)
+    println(storageSymbols)
 }
