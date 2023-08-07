@@ -8,9 +8,9 @@ fun main () {
 
     val newFriedEggsRecipe = friedEggsRecipe.map{
         it.key to it.value * portions
-    }
+    }.toMap()
 
-    println("На $portions порций вам понадобится: Яиц – ${newFriedEggsRecipe.toMap().get("Яйца")}, " +
-            "молока – ${newFriedEggsRecipe.toMap().get("Молоко")}, " +
-            "сливочного масла – ${newFriedEggsRecipe.toMap().get("Сливочное масло")}]")
+    println("На $portions порций вам понадобится: Яиц – ${newFriedEggsRecipe["Яйца"]}, " +
+            "молока – ${newFriedEggsRecipe["Молоко"]}, " +
+            "сливочного масла – ${newFriedEggsRecipe["Сливочное масло"]}")
 }
