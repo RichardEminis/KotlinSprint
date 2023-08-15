@@ -10,7 +10,7 @@ fun main() {
     userData1.addBio()
     userData1.editPassword()
     userData1.printUserData()
-    userData1.sendMessage()
+    userData1.sendMessage("привет!!!")
 }
 
 class UserData(
@@ -44,9 +44,8 @@ class UserData(
         }
     }
 
-    fun sendMessage() {
-        println("Введите сообщение для отправки на почту $email:")
-        println("\n$logIn, ${readln()}")
+    fun sendMessage(text: String) {
+        println("\n$logIn, ${text}")
     }
 }
 
