@@ -1,16 +1,22 @@
 package lesson10
 
-fun  main() {
+fun main() {
     println("Введите длину пароля:")
     val userAnswer = readln().toInt().passwordGenerator()
     println(userAnswer)
 }
 
 fun Int.passwordGenerator(): String {
-    var symbols = ("""0123456789!"#$%&'()*+,-./""").random().toString()
+    val rangeOfNumbers = (0..9)
+    val rangeOfSymbols = (33..47)
+    var storageOfSymbols = rangeOfNumbers.random().toString()
+
     for (i in 1 until this) {
-        val storageForNumbers = ("""0123456789!"#$%&'( )*+,-./""").random().toString()
-        symbols += storageForNumbers
+        if (i % 2 != 0) {
+            storageOfSymbols += rangeOfSymbols.random().toChar().toString()
+        } else {
+            storageOfSymbols += rangeOfNumbers.random().toString()
+        }
     }
-    return(symbols)
+    return (storageOfSymbols)
 }
