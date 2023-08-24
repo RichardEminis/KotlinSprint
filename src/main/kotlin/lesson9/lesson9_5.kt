@@ -1,10 +1,8 @@
 package lesson9
 
-import java.lang.Character.toUpperCase
-
 fun main() {
     println("Введите 5 инредиентов через запятую:")
-    var userAnswer = listOf(*readln().toLowerCase().filterNot { it.isWhitespace() }.split(",").toTypedArray()).sorted().toSet()
-
-    println(userAnswer.toString().replace("[", "").replace("]", "").capitalize() + ".")
+    val userAnswer = listOf(*readln().lowercase().filterNot { it.isWhitespace() }.split(",").toTypedArray()).sorted().toSet()
+    val stringUserAnswer = userAnswer.toString().replace("[", "").replace("]", "")
+    println(stringUserAnswer.get(0).uppercase() + stringUserAnswer.slice(1 until stringUserAnswer.length) + ".")
 }
