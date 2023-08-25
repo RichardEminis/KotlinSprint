@@ -5,7 +5,8 @@ fun main() {
         name = "Рокета",
         banner = "Тюлень с ракетой",
         speed = 20,
-        cargo = 13
+        cargo = 13,
+        isIceBreaker = false
     )
 
     ship.shipSpeed()
@@ -16,7 +17,8 @@ class DefaultShip(
     var name: String,
     var banner: String,
     var speed: Int,
-    var cargo: Int
+    var cargo: Int,
+    var isIceBreaker: Boolean
 ) {
     fun shipSpeed() {
         println("Скорость корабля: $speed")
