@@ -1,10 +1,13 @@
 package lesson10
 
+const val LOGIN_LENGTH = 4
+
 fun main() {
     println("Для регистрации введите логин (с длиной не менее 4 символов):")
     val userLogIn = readln()
 
-    if (userLogIn.newPasswordLogInCheck()) {
+    if (userLogIn.isLengthOk()) {
+        println("Логин недостаточно длинный")
         return
     }
 
@@ -17,14 +20,7 @@ fun main() {
     smsGenerator()
 }
 
-fun String.newPasswordLogInCheck(): Boolean {
-    var result = false
-    if (this.count() < 4) {
-        println("Логин недостаточно длинный")
-        result = true
-    }
-    return result
-}
+fun String.isLengthOk(): Boolean = this.length > LOGIN_LENGTH
 
 fun Int.newPasswordGenerator(): String {
     val rangeOfNumbers = (0..9)
