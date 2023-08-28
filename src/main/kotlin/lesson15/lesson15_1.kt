@@ -3,40 +3,36 @@ package lesson15
 fun main() {
 
     val duck = Duck(
-        name = "Утка",
-        isAquatic = true
+        name = "Утка"
     )
     duck.fly()
     duck.swim()
     println()
 
     val crucian = СrucianCurp(
-        name = "Карась",
-        isAquatic = true
+        name = "Карась"
     )
     crucian.swim()
     println()
 
     val gull = Gull(
-        name = "Чайка",
-        isAquatic = false
+        name = "Чайка"
     )
     gull.fly()
     println()
 }
 
 abstract class MovingCreatures : Swimming, Flying {
-    abstract val isAquatic: Boolean
     abstract val name: String
 }
 
-class СrucianCurp(override val isAquatic: Boolean, override val name: String) : MovingCreatures() {
+class СrucianCurp(override val name: String) : MovingCreatures() {
     override fun swim() {
         println("$name плывет в воде")
     }
 }
 
-class Duck(override val isAquatic: Boolean, override val name: String) : MovingCreatures() {
+class Duck(override val name: String) : MovingCreatures() {
     override fun swim() {
         println("$name ныряет и плывет под водой")
     }
@@ -46,7 +42,7 @@ class Duck(override val isAquatic: Boolean, override val name: String) : MovingC
     }
 }
 
-class Gull(override val isAquatic: Boolean, override val name: String) : MovingCreatures() {
+class Gull(override val name: String) : MovingCreatures() {
     override fun fly() {
         println("$name летит в небе")
     }
