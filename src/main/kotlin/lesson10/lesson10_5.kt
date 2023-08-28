@@ -1,6 +1,6 @@
 package lesson10
 
-const val LOGIN_LENGTH = 4
+const val MIN_LOGIN_LENGTH = 4
 
 fun main() {
     println("Для регистрации введите логин (с длиной не менее 4 символов):")
@@ -20,7 +20,7 @@ fun main() {
     smsGenerator()
 }
 
-fun String.isLengthOk(): Boolean = this.length > LOGIN_LENGTH
+fun String.isLengthOk(): Boolean = this.length > MIN_LOGIN_LENGTH
 
 fun Int.newPasswordGenerator(): String {
     val rangeOfNumbers = (0..9)
