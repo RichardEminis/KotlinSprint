@@ -23,15 +23,12 @@ class NewUserPhoneBook(
     val listOfContacts: List<NewUserPhoneBook> = listOfNotNull()
 ) {
     fun printContactData() {
-        var iterator = 0
-
         for(contact in listOfContacts) {
             println(
-                "Имя: ${listOfContacts[iterator].name ?: "[не указано]"}\n" +
-                        "Номер: ${listOfContacts[iterator].phone ?: "[не указано]"}\n" +
-                        "Компания: ${listOfContacts[iterator].company ?: "[не указано]"}\n"
+                "Имя: ${contact.name ?: "[не указано]"}\n" +
+                        "Номер: ${contact.phone ?: "[не указано]"}\n" +
+                        "Компания: ${contact.company ?: "[не указано]"}\n"
             )
-            iterator++
         }
     }
 }
