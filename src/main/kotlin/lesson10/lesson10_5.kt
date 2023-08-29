@@ -6,23 +6,23 @@ fun main() {
     println("Для регистрации введите логин (с длиной не менее 4 символов):")
     val userLogIn = readln()
 
-    if (userLogIn.isLengthOk()) {
+    if (!userLogIn.isLengthOk()) {
         println("Логин недостаточно длинный")
         return
     }
 
     println("Введите длину генерируемого пароля:")
-    val userAnswer = readln().toInt().newPasswordGenerator()
+    val userAnswer = readln().toInt().generatePassword()
     println(userAnswer)
 
     authorization(userLogIn, userAnswer)
 
-    smsGenerator()
+    generateSms()
 }
 
 fun String.isLengthOk(): Boolean = this.length > MIN_LOGIN_LENGTH
 
-fun Int.newPasswordGenerator(): String {
+fun Int.generatePassword(): String {
     val rangeOfNumbers = (0..9)
     val rangeOfSymbols = (33..47)
     var storageOfSymbols = rangeOfNumbers.random().toString()
@@ -37,7 +37,7 @@ fun Int.newPasswordGenerator(): String {
     return (storageOfSymbols)
 }
 
-fun smsGenerator() {
+fun generateSms() {
     var smsNumbers = (1000..9999).random()
 
     do {
