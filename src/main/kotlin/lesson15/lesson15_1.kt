@@ -5,7 +5,6 @@ fun main() {
     val duck = Duck(
         name = "Утка"
     )
-    duck.fly()
     duck.swim()
     println()
 
@@ -22,27 +21,27 @@ fun main() {
     println()
 }
 
-abstract class MovingCreatures : Swimming, Flying {
+abstract class SwimmingCreatures : Swimming {
     abstract val name: String
 }
 
-class СrucianCurp(override val name: String) : MovingCreatures() {
+abstract class FlyingCreatures : Flying {
+    abstract val name: String
+}
+
+class СrucianCurp(override val name: String) : SwimmingCreatures() {
     override fun swim() {
         println("$name плывет в воде")
     }
 }
 
-class Duck(override val name: String) : MovingCreatures() {
+class Duck(override val name: String) : SwimmingCreatures() {
     override fun swim() {
         println("$name ныряет и плывет под водой")
     }
-
-    override fun fly() {
-        println("$name летит в небе")
-    }
 }
 
-class Gull(override val name: String) : MovingCreatures() {
+class Gull(override val name: String) : FlyingCreatures() {
     override fun fly() {
         println("$name летит в небе")
     }
