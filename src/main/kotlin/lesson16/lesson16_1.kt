@@ -1,8 +1,7 @@
 package lesson16
 
 fun main() {
-    val dice = Dice(
-    )
+    val dice = Dice()
 
     dice.getRandomNumber()
 }
