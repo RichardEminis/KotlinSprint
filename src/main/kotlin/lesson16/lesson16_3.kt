@@ -2,18 +2,21 @@ package lesson16
 
 fun main() {
     val user = User(
+        logIn = "Sam",
+        password = "Asdfg123"
     )
 
-    user.checkPassword()
+    println("Введите пароль:")
+    val passwordIsCorrect = user.checkPassword(readln())
 }
 
 class User(
-    val logIn: String = "Sam",
-    private val password: String = "asdfg123"
+    val logIn: String,
+    private val password: String
 ) {
-    fun checkPassword() {
-        println("Введите пароль:")
-        val answer = readln()
+    fun checkPassword(answer: String): Boolean {
         if (answer == password) println("Пароль введен верно!")
+        val result = true
+        return result
     }
 }
