@@ -1,8 +1,11 @@
 package lesson16
 
+import kotlin.math.pow
+
+private const val PI: Double = 3.14
 fun main() {
     val circle = Circle(
-        radius = 5
+        radius = 5.0
     )
 
     circle.circumference()
@@ -10,16 +13,15 @@ fun main() {
 }
 
 class Circle(
-    private val pi: Double = 3.14,
-    private val radius: Int
+    private val radius: Double
 ) {
     fun circumference() {
-        val result = pi * (radius * 2)
+        val result = PI * (radius * 2)
         println("Длина окружности: ${String.format("%.1f", result)}")
     }
 
     fun areaOfCircle() {
-        val result = pi * (radius * radius)
+        val result = PI * (radius.pow(2))
         println("Площадь круга: $result")
     }
 }
