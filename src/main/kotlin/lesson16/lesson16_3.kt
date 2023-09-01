@@ -14,9 +14,6 @@ class User(
     val logIn: String,
     private val password: String
 ) {
-    fun checkPassword(answer: String): Boolean {
-        if (answer == password) println("Пароль введен верно!")
-        val result = true
-        return result
-    }
+    fun checkPassword(answer: String) = if (answer == password) println("Пароль введен верно!")
+    else println("Неверный пароль!")
 }
