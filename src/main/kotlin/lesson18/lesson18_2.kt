@@ -2,31 +2,31 @@ package lesson18
 
 fun main() {
     val fourSide = FourSide()
-    println(fourSide.rollDices())
+    fourSide.rollDices()
 
     val sixSide = SixSide()
-    println(sixSide.rollDices())
+    sixSide.rollDices()
 
     val eightSide = EightSide()
-    println(eightSide.rollDices())
+    eightSide.rollDices()
 }
 
-abstract class Dices(
-    var numberOfSides: IntRange
+abstract class Dice(
+    var numberOfSides: Int
 ) {
-    open fun rollDices(): Int {
-        return numberOfSides.random()
+    open fun rollDices() {
+        println("Число с кубика: ${(1..numberOfSides).random()}")
     }
 }
 
 class FourSide(
-    numberOfSides: IntRange = 1..4
-) : Dices(numberOfSides)
+    numberOfSides: Int = 4
+) : Dice(numberOfSides)
 
 class SixSide(
-    numberOfSides: IntRange = 1..6
-) : Dices(numberOfSides)
+    numberOfSides: Int = 6
+) : Dice(numberOfSides)
 
 class EightSide(
-    numberOfSides: IntRange = 1..8
-) : Dices(numberOfSides)
+    numberOfSides: Int = 8
+) : Dice(numberOfSides)
