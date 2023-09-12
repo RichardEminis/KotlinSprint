@@ -22,7 +22,7 @@ fun main() {
     jam.printProductInfo()
 }
 
-enum class InternetStoreCatalog(val values: String) {
+enum class InternetStoreCatalog(val itemName: String) {
     CLOTH("Одежда"),
     STATIONERY("Канцелярские товары"),
     OTHER("Разное")
@@ -30,9 +30,9 @@ enum class InternetStoreCatalog(val values: String) {
 
 fun getNameCategory(category: InternetStoreCatalog) {
     when (category) {
-        InternetStoreCatalog.CLOTH -> println(category.values)
-        InternetStoreCatalog.STATIONERY -> println(category.values)
-        InternetStoreCatalog.OTHER -> println(category.values)
+        InternetStoreCatalog.CLOTH -> println(category.itemName)
+        InternetStoreCatalog.STATIONERY -> println(category.itemName)
+        InternetStoreCatalog.OTHER -> println(category.itemName)
     }
 }
 
