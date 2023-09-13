@@ -3,19 +3,20 @@ package lesson19
 fun main() {
     val ironTank = Tank(
         name = "Железяка",
+        typeOfAmmo = Ammo.NOTHING,
+        dmg = Ammo.NOTHING.dmg
     )
-    ironTank.equip(Ammo.GREEN)
+    ironTank.equipDemo(Ammo.GREEN)
     ironTank.fire()
 
-    ironTank.equip(Ammo.BLUE)
+    ironTank.equipDemo(Ammo.BLUE)
     ironTank.fire()
 
-    ironTank.equip(Ammo.RED)
+    ironTank.equipDemo(Ammo.RED)
     ironTank.fire()
-
 }
 
-enum class Ammo(val ammo: String, val dmg: Int) {
+enum class Ammo(val color: String, val dmg: Int) {
     NOTHING("Ничем не заряжен", 0),
     BLUE("Синие", 5),
     GREEN("Зеленые", 10),
@@ -24,36 +25,13 @@ enum class Ammo(val ammo: String, val dmg: Int) {
 
 class Tank(
     val name: String,
-    var ammo: String = Ammo.NOTHING.ammo,
-    var dmg: Int = Ammo.NOTHING.dmg
+    var typeOfAmmo: Ammo,
+    var dmg: Int
 ) {
-    fun equip(getAmmo: Ammo) {
-        when (getAmmo) {
-            Ammo.NOTHING -> {
-                ammo = Ammo.NOTHING.ammo
-                dmg = Ammo.NOTHING.dmg
-                println("Вооружены следующие патроны: ${ammo}")
-            }
-
-            Ammo.BLUE -> {
-                ammo = Ammo.BLUE.ammo
-                dmg = Ammo.BLUE.dmg
-                println("Вооружены следующие патроны: ${ammo}")
-            }
-
-            Ammo.GREEN -> {
-                ammo = Ammo.GREEN.ammo
-                dmg = Ammo.GREEN.dmg
-                println("Вооружены следующие патроны: ${ammo}")
-            }
-
-            Ammo.RED -> {
-                ammo = Ammo.RED.ammo
-                dmg = Ammo.RED.dmg
-                println("Вооружены следующие патроны: ${ammo}")
-            }
-        }
-
+    fun equipDemo(ammunition: Ammo) {
+        this.typeOfAmmo = ammunition
+        this.dmg = ammunition.dmg
+        println("Вооружены следующие патроны: ${ammunition.color}")
     }
 
     fun fire() {
