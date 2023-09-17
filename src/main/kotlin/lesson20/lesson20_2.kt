@@ -8,13 +8,17 @@ fun main() {
         maxHealth = 100
     )
 
-    player1.heathStatus()
+    player1.getHealthStatus()
 
-    val healingPotion: () -> Unit
-    println("Вы выпили зелье здоровья!");
-    { player1.currentHeath = player1.maxHealth }()
+    val healingPotion: (Int) -> Unit = { health: Int ->
+        player1.currentHeath = player1.maxHealth
+        println("Вы выпили зелье здоровья!")
+    }
 
-    player1.heathStatus()
+    healingPotion(player1.currentHeath)
+
+
+    player1.getHealthStatus()
 }
 
 class Player(
@@ -22,7 +26,7 @@ class Player(
     var currentHeath: Int,
     var maxHealth: Int
 ) {
-    fun heathStatus() {
+    fun getHealthStatus() {
         println("Ваше здоровье: $currentHeath")
     }
 }
