@@ -2,13 +2,13 @@ package lesson11
 
 fun main() {
 
-    val userData1 = UserData(
+    val userData1 = UserData0(
         logIn = "Ivan",
         password = "qwert",
         email = "Ivan@gmail.com"
     )
 
-    val userData2 = UserData(
+    val userData2 = UserData0(
         logIn = "Boris",
         password = "asdfg",
         email = "Boris@gmail.com"
@@ -22,9 +22,9 @@ fun main() {
     println(userData2.password)
     println(userData2.email)
 }
-class NewUserData(
+
+class UserData0(
     val logIn: String,
     val password: String,
     val email: String
-) {
-}
+)
