@@ -22,9 +22,9 @@ fun main() {
     println(userData2.password)
     println(userData2.email)
 }
+
 class UserData0(
     val logIn: String,
     val password: String,
     val email: String
-) {
-}
+)
