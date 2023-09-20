@@ -1,7 +1,7 @@
 package lesson14
 
 fun main() {
-    val Setus = Satellites(
+    val setus = Satellites(
         name = "Setus",
         isHabitable = false,
         haveAtmosphere = true,
@@ -9,7 +9,7 @@ fun main() {
         isLanding = true
     )
 
-    val Verta = Satellites(
+    val verta = Satellites(
         name = "Verta",
         isHabitable = false,
         haveAtmosphere = true,
@@ -17,16 +17,19 @@ fun main() {
         isLanding = false
     )
 
-    val Titan = Planet(
+    val titan = Planet(
         name = "Titan",
         isHabitable = false,
         haveAtmosphere = false,
         haveWater = true,
         isLanding = true,
-        listOfSatellites = listOf(Verta.name, Setus.name)
+        listOfSatellites = listOf(
+            Satellites(verta.name, verta.isHabitable, verta.haveAtmosphere, verta.haveWater, verta.isLanding),
+            Satellites(setus.name, setus.isHabitable, setus.haveAtmosphere, setus.haveWater, setus.isLanding)
+        )
     )
 
-    Titan.printListOfSatellites()
+    titan.printListOfSatellites()
 }
 
 abstract class SpaceObjects(
@@ -34,8 +37,7 @@ abstract class SpaceObjects(
     var isHabitable: Boolean,
     var haveAtmosphere: Boolean,
     var haveWater: Boolean,
-    var isLanding: Boolean,
-    var listOfSatellites: List<String> = listOfNotNull()
+    var isLanding: Boolean
 )
 
 class Planet(
@@ -44,11 +46,17 @@ class Planet(
     haveAtmosphere: Boolean,
     haveWater: Boolean,
     isLanding: Boolean,
-    listOfSatellites: List<String>
+    val listOfSatellites: List<Satellites> = listOf()
 
-) : SpaceObjects(name, isHabitable, haveAtmosphere, haveWater, isLanding, listOfSatellites) {
+) : SpaceObjects(name, isHabitable, haveAtmosphere, haveWater, isLanding) {
     fun printListOfSatellites() {
-        println("Спутники планеты $name: $listOfSatellites")
+        print("Суптники планеты $name: ")
+        var iterator = 0
+        for (planet in listOfSatellites) {
+            print(planet.name)
+            iterator++
+            if (listOfSatellites.size > iterator) print(", ") else print(".")
+        }
     }
 }
 
