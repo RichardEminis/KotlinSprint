@@ -19,16 +19,13 @@ fun main() {
     precipitationData.sendMessage()
 }
 
-abstract class MessageSender(
-) {
+abstract class MessageSender {
     open fun connectToServer() {
         println("Происходит подключение к серверу...")
         println("Подключение прошло успешно!")
     }
 
-    open fun sendMessage() {
-        println()
-    }
+    abstract fun sendMessage()
 }
 
 class Temperature(
