@@ -6,7 +6,8 @@ fun main() {
         name = "Гитара",
         amount = 4,
         listOfAccessories = listOf(
-            Accessories("Ремень", 2), Accessories("Медиатор", 43),
+            Accessories("Ремень", 2),
+            Accessories("Медиатор", 43),
             Accessories("Тюнер", 10)
         )
     )
@@ -18,7 +19,7 @@ fun main() {
 abstract class Product(
     val name: String,
     val amount: Int
-) : find
+) : Find
 
 class Instrument(
     name: String,
@@ -40,7 +41,7 @@ class Accessories(
     amount: Int
 ) : Product(name, amount)
 
-interface find {
+interface Find {
     fun findAccessories() {
         println("Выполняется поиск...")
     }
