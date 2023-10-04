@@ -7,13 +7,12 @@ fun main() {
     )
 
     println("Введите пароль:")
-    val passwordIsCorrect = user.checkPassword(readln())
+    if (user.checkPassword(readln())) println("Пароль введен верно!") else println("Неверный пароль!")
 }
 
 class User(
     val logIn: String,
     private val password: String
 ) {
-    fun checkPassword(answer: String) = if (answer == password) println("Пароль введен верно!")
-    else println("Неверный пароль!")
+    fun checkPassword(answer: String): Boolean = if (answer == password) true else false
 }
