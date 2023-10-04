@@ -3,43 +3,41 @@ package lesson16
 fun main() {
     val order1 = StoreOrder(
         numberOfOrder = 1,
-        isReady = false
+        isReady = false,
+        statusOfOrder = false
     )
 
     println("Введите номер заказа:") //Подразумевается, что пользователь знает номер заказа и отправляет запрос менеджеру
     val userOrder = readln().toInt()
 
-    println("Статуст вашего заказа: ${order1.checkStatus()}\nХотите изменить статус заказа на 'Готово'? (да/нет)")
-    var newUserStatus = false
+    println("Статуст вашего заказа: ${order1.statusOfOrder}\nХотите изменить статус заказа на 'Готово'? (да/нет)")
     if (readln() == "да") {
-        newUserStatus = true
+        order1.statusOfOrder = true
+        order1.manage(Pair(order1.statusOfOrder, userOrder))
+        println("Статус заказа №$userOrder: ${order1.checkStatus()}")
     } else return
-
-    order1.manager(order1.changeOrder(newUserStatus, userOrder))
-
-    println("Статус заказа №$userOrder: ${order1.checkStatus()}")
 }
 
 class StoreOrder(
     private val numberOfOrder: Int,
-    protected var isReady: Boolean
+    private var isReady: Boolean,
+    var statusOfOrder: Boolean
 ) {
     fun checkStatus(): Boolean {
         return isReady
     }
 
-    fun changeOrder(newStatus: Boolean, numberOfOrder: Int): Pair<Boolean, Int> {
+    private fun changeOrder(newStatus: Boolean) {
         isReady = newStatus
-
-        return Pair(newStatus, numberOfOrder)
+        println("Статус заказа №$numberOfOrder изменен")
     }
 
-    fun manager(newStatus: Pair<Boolean, Int>) {
+    fun manage(newStatus: Pair<Boolean, Int>) {
         println("Здравствуйте 'Менеджер'\nНовый статус для заказа №$numberOfOrder: ${newStatus.first}")
 
         println("Принять новые изменения? (да/нет)")
-        if (readln() == "да") {
-            println("Статус заказа №$numberOfOrder изменен")
+        if (readln().equals("да", ignoreCase = true)) {
+            changeOrder(newStatus.first)
         } else {
             println("Статус не одобрен.")
             isReady = false
