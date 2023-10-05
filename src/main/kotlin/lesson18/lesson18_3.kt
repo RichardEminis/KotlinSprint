@@ -2,53 +2,53 @@ package lesson18
 
 fun main() {
     val fox = Fox()
-    fox.eating()
-    fox.sleeping()
-    fox.playing()
+    fox.eat()
+    fox.sleep()
+    fox.play()
 
     println()
 
     val dog = Dog()
-    dog.eating()
-    dog.sleeping()
-    dog.playing()
+    dog.eat()
+    dog.sleep()
+    dog.play()
 
     println()
 
     val cat = Cat()
-    cat.eating()
-    cat.sleeping()
-    cat.playing()
+    cat.eat()
+    cat.sleep()
+    cat.play()
 }
 
 abstract class Tamagochi(
     val name: String,
-    val eat: String,
+    val food: String,
 ) {
-    fun eating() {
-        println("$name $eat")
+    fun eat() {
+        println("$name ест $food")
     }
 
-    fun playing() {
+    fun play() {
         println("$name играет")
     }
 
-    fun sleeping() {
+    fun sleep() {
         println("$name спит")
     }
 }
 
 class Fox(
     name: String = "Лиса",
-    eat: String = "ест ягоды"
-) : Tamagochi(name, eat)
+    food: String = "ягоды"
+) : Tamagochi(name, food)
 
 class Dog(
     name: String = "Собака",
-    eat: String = "ест кости"
-) : Tamagochi(name, eat)
+    food: String = "кости"
+) : Tamagochi(name, food)
 
 class Cat(
     name: String = "Кошка",
-    eat: String = "ест рыбу"
-) : Tamagochi(name, eat)
+    food: String = "рыбу"
+) : Tamagochi(name, food)
