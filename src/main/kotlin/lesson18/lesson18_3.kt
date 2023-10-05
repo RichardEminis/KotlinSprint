@@ -25,9 +25,7 @@ abstract class Tamagochi(
     val name: String,
     val food: String,
 ) {
-    fun eat() {
-        println("$name ест $food")
-    }
+    abstract fun eat()
 
     fun play() {
         println("$name играет")
@@ -41,14 +39,26 @@ abstract class Tamagochi(
 class Fox(
     name: String = "Лиса",
     food: String = "ягоды"
-) : Tamagochi(name, food)
+) : Tamagochi(name, food) {
+    override fun eat() {
+        println("$name ест $food")
+    }
+}
 
 class Dog(
     name: String = "Собака",
     food: String = "кости"
-) : Tamagochi(name, food)
+) : Tamagochi(name, food){
+    override fun eat() {
+        println("$name ест $food")
+    }
+}
 
 class Cat(
     name: String = "Кошка",
     food: String = "рыбу"
-) : Tamagochi(name, food)
+) : Tamagochi(name, food){
+    override fun eat() {
+        println("$name ест $food")
+    }
+}
