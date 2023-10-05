@@ -5,7 +5,7 @@ fun main() {
     val cubeBox = CubeBox(
         edgeLength = 4
     )
-    println("Площадь куба: ${cubeBox.cubeArea(cubeBox.edgeLength)}")
+    println("Площадь куба: ${cubeBox.area()}")
 
     val rectangularBox = RectangularBox(
         length = 4,
@@ -14,16 +14,18 @@ fun main() {
     )
     println(
         "Площадь параллелепипеда: " +
-                "${rectangularBox.rectangularArea(rectangularBox.length, rectangularBox.height, rectangularBox.width)}"
+                "${rectangularBox.area()}"
     )
 }
 
-open class Box
+abstract class Box {
+    abstract fun area(): Int
+}
 
 class CubeBox(
     val edgeLength: Int
 ) : Box() {
-    fun cubeArea(edgeLength: Int): Int {
+    override fun area(): Int {
         val result = (edgeLength * edgeLength) * 6
         return result
     }
@@ -34,7 +36,7 @@ class RectangularBox(
     val height: Int,
     val width: Int
 ) : Box() {
-    fun rectangularArea(length: Int, height: Int, width: Int): Int {
+    override fun area(): Int {
         val result = (length * height + length * width + height * width) * 2
         return result
     }
