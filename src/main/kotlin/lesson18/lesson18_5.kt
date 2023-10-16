@@ -1,35 +1,41 @@
 package lesson18
 
 fun main() {
+    val circle1 = Circle()
+    val square = Square()
+    val point = Point()
+
     val screen = Screen (
         listOfObjects = mutableListOf()
     )
 
-    screen.draw(43,432.43F, Circle())
+    screen.draw(43,432.43F, circle1)
+    screen.draw(43.34F, 234, square)
+    screen.draw(24.43F, 34.43F, point)
 }
 
 abstract class Object(
-    val name: String
+    val name: String,
     var x: Float,
     var y: Float
 )
 
 class Square(
     name: String = "квадрат",
-    x: Float,
-    y: Float
+    x: Float = 0F,
+    y: Float = 0F
 ) : Object(name, x, y) {}
 
 class Circle(
     name: String = "круг",
-    x: Float,
-    y: Float
+    x: Float = 0F,
+    y: Float = 0F
 ) : Object(name, x, y) {}
 
 class Point(
     name: String = "точка",
-    x: Float,
-    y: Float
+    x: Float = 0F,
+    y: Float = 0F
 ) : Object(name, x, y) {}
 
 class Screen(

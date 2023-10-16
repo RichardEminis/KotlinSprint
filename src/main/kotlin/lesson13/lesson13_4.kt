@@ -15,7 +15,7 @@ fun main() {
     phoneBook.printContactData()
 }
 
-class UserPhoneBook3(
+class UserPhoneBook4(
     var name: String?,
     var phone: Long? = null,
     var company: String?,
