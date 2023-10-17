@@ -7,10 +7,19 @@ enum class GenderOfPerson(gender: String) {
     WOMAN("женщина")
 }
 
-class CardIndex (
+class CardIndex(
     listOfPersons: Person
 ) {
-    fun addPersonToCard(){}
+    fun addPersonToCard(name: String, gender: GenderOfPerson) {}
+    fun registration() {
+        println("Введите ваше имя:")
+        val nameAnswer = readln()
+        println("Введите ваш пол\nЕсли вы женщина, введите 'Ж'\nЕсли вы мужчина, введите 'М'")
+        val genderAnswer: GenderOfPerson
+        if (readln().equals("М", ignoreCase = true))
+            genderAnswer = GenderOfPerson.MAN
+        else genderAnswer = GenderOfPerson.WOMAN
+    }
 }
 
 class Person(
