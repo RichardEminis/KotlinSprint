@@ -1,11 +1,9 @@
 package lesson19
 
 fun main() {
-    val cardIndex = CardIndex(
-        listOfPersons = mutableListOf()
-    )
+    val cardIndex = CardIndex()
 
-    cardIndex.registration()
+    cardIndex.register()
 }
 
 enum class GenderOfPerson(val personGender: String) {
@@ -13,14 +11,10 @@ enum class GenderOfPerson(val personGender: String) {
     WOMAN("Женщина")
 }
 
-class CardIndex(
-    var listOfPersons: MutableList<Person>
-) {
-    fun addPersonToCard(name: String, personGender: GenderOfPerson) {
-        listOfPersons.add(Person(name, personGender))
-    }
+class CardIndex {
+    fun register() {
+        val listOfPersons: MutableList<Person> = mutableListOf()
 
-    fun registration() {
         println("Необходимо ввести в картотеку 5 человек, после чего операция будет завершена.")
         for (i in 1..5) {
             println("Введите имя:")
@@ -30,8 +24,9 @@ class CardIndex(
             if (readln().equals("М", ignoreCase = true))
                 genderAnswer = GenderOfPerson.MAN
             else genderAnswer = GenderOfPerson.WOMAN
-            addPersonToCard(nameAnswer, genderAnswer)
+            listOfPersons.add(Person(nameAnswer, genderAnswer))
         }
+
         for (i in listOfPersons) {
             println("Имя: ${i.name}\nГендер: ${i.gender.personGender}")
         }
