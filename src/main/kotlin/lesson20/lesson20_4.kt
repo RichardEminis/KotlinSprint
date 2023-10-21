@@ -2,11 +2,12 @@ package lesson20
 
 fun main() {
 
-    val values1: List<String> = listOf("Редис", "Морковь", "Петрушка", "Кабачок")
+    val listOfValues: List<String> = listOf("Редис", "Морковь", "Петрушка", "Кабачок")
 
-    val values2 = values1.map {
-        if ((values1.indexOf(it) % 2) == 1)
-            println({ it: String -> "Нажат элемент: $it" }(it))
+    val listOfLambda = listOfValues.map { it: String -> { "Нажат элемент: $it" } }
+
+    for (i in listOfLambda) {
+        if ((listOfLambda.indexOf(i) % 2) == 1) println(i.invoke())
     }
 }
 
