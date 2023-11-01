@@ -6,8 +6,6 @@ fun main() {
 
     val listOfLambda = listOfValues.map { it: String -> { "Нажат элемент: $it" } }
 
-    for (i in listOfLambda) {
-        if ((listOfLambda.indexOf(i) % 2) == 1) println(i.invoke())
-    }
+    listOfLambda.forEachIndexed { index, value -> if ((index % 2) == 1) println(value.invoke()) }
 }
 
