@@ -11,10 +11,10 @@ enum class GenderOfPerson(val personGender: String) {
     WOMAN("Женщина")
 }
 
-class CardIndex {
+class CardIndex(
+    val listOfPersons: MutableList<Person> = mutableListOf()
+) {
     fun register() {
-        val listOfPersons: MutableList<Person> = mutableListOf()
-
         println("Необходимо ввести в картотеку 5 человек, после чего операция будет завершена.")
         for (i in 1..5) {
             println("Введите имя:")
