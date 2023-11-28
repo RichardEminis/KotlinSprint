@@ -19,7 +19,7 @@ class CardIndex(
         for (i in 1..5) {
             println("Введите имя:")
             val nameAnswer = readln()
-            println("Введите гендер\nЕсли вы женщина, введите 'Ж'\nЕсли вы мужчина, введите 'М'")
+            println("Введите пол\nЕсли вы женщина, введите 'Ж'\nЕсли вы мужчина, введите 'М'")
             val genderAnswer: GenderOfPerson
             if (readln().equals("М", ignoreCase = true))
                 genderAnswer = GenderOfPerson.MAN
