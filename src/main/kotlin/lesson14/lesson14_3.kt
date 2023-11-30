@@ -1,4 +1,4 @@
-package lesson14_3
+package lesson14
 
 fun main() {
     val message = ForumMessenger(
