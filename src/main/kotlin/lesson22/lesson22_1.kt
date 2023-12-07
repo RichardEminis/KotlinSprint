@@ -3,10 +3,7 @@ package lesson22
 fun main() {
     val first = DataBook("Владимир С.А.", "Буревестник")
     val second = RegularBook("Владимир С.А.", "Буревестник")
-    println(first.title == second.title)
-    println(first.author == second.author)
-
-    // Сравнение происходит непосредственно значений
+    println(first == second) //невозможно сравнить два разных по типу экземпляра класса, сравнение возможно только если эземпляры класса принадлежат одному классу
 }
 
 data class DataBook(
